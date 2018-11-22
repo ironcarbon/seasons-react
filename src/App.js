@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends Component {
   //Babel makes for us
@@ -28,7 +29,7 @@ class App extends Component {
     return <div><SeasonDisplay position={this.state.lat}/></div>
   } 
 
-  return <div>Loading!</div>
+  return <Spinner message="Please, accept location request"/>
      
   }  
 }
