@@ -19,17 +19,28 @@ class App extends Component {
       );
     }
   
+    renderContent(){
+      if(this.state.errorMessage && !this.state.lat){
+        return <div>Error:{this.state.errorMessage}</div>
+      } 
+    
+      if(this.state.lat && !this.state.errorMessage){
+        return <div><SeasonDisplay position={this.state.lat}/></div>
+      } 
+    
+      return <Spinner message="Please, accept location request"/>
+    }
+
+
+
 
   render(){
-  if(this.state.errorMessage && !this.state.lat){
-    return <div>Error:{this.state.errorMessage}</div>
-  } 
-
-  if(this.state.lat && !this.state.errorMessage){
-    return <div><SeasonDisplay position={this.state.lat}/></div>
-  } 
-
-  return <Spinner message="Please, accept location request"/>
+    return(
+      <div className="red border">
+      {this.renderContent()}
+      </div>
+    )
+  
      
   }  
 }
