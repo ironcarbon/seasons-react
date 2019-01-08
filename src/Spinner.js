@@ -2,9 +2,9 @@ import React from 'react';
 
 const spinner= (props) => {
     return(
-  <div class="ui active dimmer">
+  <div className="ui active dimmer">
     {/*<div class="ui big text loader">{props.message || 'Loading...'}</div>*/}
-    <div class="ui big text loader">{props.message}</div>
+    <div className="ui big text loader">{props.message}</div>
 
   </div>
     )
